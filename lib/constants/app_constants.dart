@@ -21,3 +21,9 @@ class _HexColor extends Color {
 
   _HexColor(final String hexColor) : super(_getColorFromHex(hexColor));
 }
+
+// ============================================== ||
+//                    dimension                   ||
+// ============================================== ||
+
+double primaryMargin = 10.0;

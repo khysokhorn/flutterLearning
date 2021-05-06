@@ -5,7 +5,15 @@ var lightTheme = ThemeData(
   brightness: Brightness.light,
   primaryColor: colorAppWhite,
   backgroundColor: colorAppWhite,
-  appBarTheme: AppBarTheme(backgroundColor: Colors.transparent, elevation: 0),
+  appBarTheme: AppBarTheme(
+    backgroundColor: Colors.transparent,
+    elevation: 0,
+    centerTitle: true,
+    titleTextStyle: TextStyle(
+      color: colorAppBlack,
+      fontSize: 8,
+    ),
+  ),
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ButtonStyle(
       textStyle: MaterialStateProperty.all(TextStyle(
@@ -20,8 +28,10 @@ var lightTheme = ThemeData(
   iconTheme: IconThemeData(
     color: colorAppPrimaryColorBrown,
   ),
-  primaryIconTheme: IconThemeData(color: colorAppPrimaryColorBrown, size: 24),
   accentIconTheme: IconThemeData(
+    color: colorAppPrimaryColorBrown,
+  ),
+  primaryIconTheme: IconThemeData(
     color: colorAppPrimaryColorBrown,
   ),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
@@ -29,5 +39,34 @@ var lightTheme = ThemeData(
     unselectedItemColor: colorAppGray,
     selectedItemColor: colorAppPrimaryColorBrown,
     showUnselectedLabels: false,
+  ),
+  outlinedButtonTheme: OutlinedButtonThemeData(
+    style: ButtonStyle(
+      foregroundColor: MaterialStateProperty.all(
+        colorAppPrimaryColorBrown,
+      ),
+      textStyle: MaterialStateProperty.all(
+        TextStyle(
+          color: Colors.red,
+        ),
+      ),
+      side: MaterialStateProperty.all(
+        BorderSide(
+          color: colorAppPrimaryColorBrown,
+        ),
+      ),
+    ),
+  ),
+  tabBarTheme: TabBarTheme(
+    unselectedLabelStyle: TextStyle(color: colorAppGray),
+    labelColor: colorAppPrimaryColorBrown,
+    unselectedLabelColor: colorAppGray,
+    indicator: UnderlineTabIndicator(
+      borderSide: BorderSide(
+        style: BorderStyle.solid,
+        color: colorAppPrimaryColorBrown,
+        width: 1.5
+      ),
+    ),
   ),
 );
