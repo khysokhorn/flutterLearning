@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:pshar_khmer/constants/app_constants.dart';
 import 'package:pshar_khmer/widgets/widgets.dart';
 
+import 'AllItemtab.dart';
+
 class FavoriteContainerView extends StatefulWidget {
   @override
   _FavoriteContainerViewState createState() => _FavoriteContainerViewState();
@@ -13,11 +15,7 @@ class _FavoriteContainerViewState extends State<FavoriteContainerView>
   TabController tabController;
 
   List<Widget> tabBody = [
-    Container(
-      child: Center(
-        child: Text("All Items"),
-      ),
-    ),
+    AllItemTab(),
     Container(
       child: Center(
         child: Text("Brands"),

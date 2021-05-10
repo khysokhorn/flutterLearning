@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pshar_khmer/modules/home/containerView/CartContainerView.dart';
 import 'package:pshar_khmer/modules/home/containerView/HomeContainer.dart';
-import 'package:pshar_khmer/modules/home/containerView/favoriteContainerView.dart';
+import 'package:pshar_khmer/modules/home/containerView/favorite/favoriteContainerView.dart';
 import 'package:pshar_khmer/modules/home/containerView/profileContainerView.dart';
 import 'package:pshar_khmer/modules/home/containerView/searchContainer.dart';
 

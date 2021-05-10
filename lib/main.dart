@@ -11,7 +11,6 @@ void main() {
       theme: lightTheme,
       initialRoute: routeHome,
       routes: routesConfig,
-      home: Scaffold(),
     ),
   );
 }

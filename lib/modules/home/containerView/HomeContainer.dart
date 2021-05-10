@@ -5,7 +5,7 @@ import 'package:pshar_khmer/widgets/widgets.dart';
 class HomeContainerView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var screenSize = MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -63,51 +63,53 @@ class HomeContainerView extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: screenSize.height * 0.05,
+              height: size.height * 0.05,
             ),
             // list
             Expanded(
-              child: GridView.builder(
+              child: GridView(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
+                  mainAxisSpacing: 2,
                   crossAxisSpacing: 10,
-                  mainAxisSpacing: 10,
                 ),
-                itemBuilder: (context, index) {
-                  return Card(
-                    elevation: 5,
-                    child: Column(
-                      children: [
-                        Expanded(
-                          child: Image.network(
-                            'https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/24287340-811b-4118-9012-ce61d89d6bb3/react-miler-2-running-shoe-TbrmSM.png',
-                            fit: BoxFit.fill,
+                children: List.generate(20, (index) {
+                  return Stack(
+                    alignment: Alignment.topCenter,
+                    clipBehavior: Clip.none,
+                    children: [
+                      //  card item
+                      Container(
+                        width: size.width,
+                        height: size.height * 0.5,
+                        margin: EdgeInsets.only(
+                          top: (size.height * 0.2 / 2 + 10) / 2,
+                        ),
+                        child: Card(
+                          elevation: 10,
+                          child: Container(
+                            margin: EdgeInsets.only(
+                                top: (size.height * 0.2 / 2 + 10) / 2,
+                                left: primaryMargin,
+                                right: primaryMargin),
+                            child: Text("hi"),
                           ),
                         ),
-                        Container(
-                          margin: EdgeInsets.all(primaryMargin),
-                          child: Column(
-                            children: [
-                              Text("name"),
-                              Row(
-                                children: [
-                                  Text('\$210'),
-                                  IconButton(
-                                      icon: Icon(Icons.favorite_rounded),
-                                      onPressed: () {})
-                                ],
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                              )
-                            ],
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                          ),
-                        )
-                      ],
-                    ),
+                      ),
+                      Container(
+                        width: size.width * 0.25,
+                        height: (size.height * 0.2 / 2 + 10),
+                        margin: EdgeInsets.only(
+                          top: primarySpace,
+                        ),
+                        child: Image.network(
+                          'https://lh3.googleusercontent.com/proxy/c3P4IIYWzLXVoI5RRmdW26BmGwc9D9MRo1un9VT5cPWeyorgc7CO7k0kG1lAqg1MyUQ6VZmtsPEMNmvAVxltwdtbmnsbOzGaFBn25wy2eu9JR5SIk-lCL9RL2UkxebkS0kyeOTLQeWQlPoM_MtETNVDSFfQxZ3EqazO_rQ',
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+                    ],
                   );
-                },
+                }),
               ),
             )
           ],
@@ -115,11 +117,35 @@ class HomeContainerView extends StatelessWidget {
       ),
     );
   }
-
-
 }
 
 /*
+*
+* Stack(
+                      alignment: Alignment.topCenter,
+                      clipBehavior: Clip.none,
+                      children: [
+                        //  card item
+                        Container(
+                          width: size.width,
+                          height: size.height * 0.5,
+                          child: Card(
+                            elevation: 10,
+                            color: Colors.red,
+                          ),
+                        ),
+                        Container(
+                          width: size.width * 0.25,
+                          height: (size.height * 0.2 / 2 + 10),
+                          child: Image.network(
+                            'https://lh3.googleusercontent.com/proxy/c3P4IIYWzLXVoI5RRmdW26BmGwc9D9MRo1un9VT5cPWeyorgc7CO7k0kG1lAqg1MyUQ6VZmtsPEMNmvAVxltwdtbmnsbOzGaFBn25wy2eu9JR5SIk-lCL9RL2UkxebkS0kyeOTLQeWQlPoM_MtETNVDSFfQxZ3EqazO_rQ',
+                            fit: BoxFit.contain,
+                          ),
+                        ),
+                      ],
+                    ),
+*
+*
 *
 *
   child: Container(

@@ -25,5 +25,11 @@ class _HexColor extends Color {
 // ============================================== ||
 //                    dimension                   ||
 // ============================================== ||
-
 double primaryMargin = 10.0;
+double primarySpace = 5.0;
+
+// ============================================== ||
+//                    text constraint             ||
+// ============================================== ||
+
+String constComingSoon = "Coming soon";
