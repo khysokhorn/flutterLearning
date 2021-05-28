@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:pshar_khmer/config/routes/routes.dart';
 import 'package:pshar_khmer/constants/app_constants.dart';
 import 'package:pshar_khmer/widgets/widgets.dart';
 
@@ -66,58 +68,132 @@ class HomeContainerView extends StatelessWidget {
               height: size.height * 0.05,
             ),
             // list
+
             Expanded(
-              child: GridView(
+              child: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  mainAxisSpacing: 2,
+                  mainAxisSpacing: 10,
                   crossAxisSpacing: 10,
                 ),
-                children: List.generate(20, (index) {
+                itemBuilder: (context, index) {
                   return Stack(
-                    alignment: Alignment.topCenter,
                     clipBehavior: Clip.none,
                     children: [
-                      //  card item
-                      Container(
-                        width: size.width,
-                        height: size.height * 0.5,
-                        margin: EdgeInsets.only(
-                          top: (size.height * 0.2 / 2 + 10) / 2,
-                        ),
+                      Positioned(
                         child: Card(
-                          elevation: 10,
-                          child: Container(
-                            margin: EdgeInsets.only(
-                                top: (size.height * 0.2 / 2 + 10) / 2,
-                                left: primaryMargin,
-                                right: primaryMargin),
-                            child: Text("hi"),
-                          ),
+                          elevation: 2,
                         ),
+                        left: 0,
+                        right: 0,
+                        bottom: 0,
+                        top: 70,
                       ),
-                      Container(
-                        width: size.width * 0.25,
-                        height: (size.height * 0.2 / 2 + 10),
-                        margin: EdgeInsets.only(
-                          top: primarySpace,
-                        ),
-                        child: Image.network(
-                          'https://lh3.googleusercontent.com/proxy/c3P4IIYWzLXVoI5RRmdW26BmGwc9D9MRo1un9VT5cPWeyorgc7CO7k0kG1lAqg1MyUQ6VZmtsPEMNmvAVxltwdtbmnsbOzGaFBn25wy2eu9JR5SIk-lCL9RL2UkxebkS0kyeOTLQeWQlPoM_MtETNVDSFfQxZ3EqazO_rQ',
+                      Positioned(
+                        child: Image.asset(
+                          'assets/images/shose.png',
                           fit: BoxFit.contain,
+                          height: 95,
                         ),
+                        top: 15,
+                        left: 60,
                       ),
+                      Positioned(
+                        top: 110,
+                        child: Container(
+                          child: Column(
+                            children: [
+                              Text("Name"),
+                              Expanded(
+                                child: Row(
+                                  children: [
+                                    Text("\$210"),
+                                    IconButton(
+                                        icon: Icon(
+                                          Icons.favorite,
+                                          color: Colors.red,
+                                        ),
+                                        onPressed: () {})
+                                  ],
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                ),
+                              )
+                            ],
+                            mainAxisSize: MainAxisSize.max,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                          ),
+                          margin: EdgeInsets.all(primaryMargin),
+                          width: 170,
+                          height: 50,
+                        ),
+                      )
                     ],
                   );
-                }),
+                },
               ),
             )
+
+            // end column
           ],
         ),
       ),
     );
   }
+
+  void toDetail(BuildContext context, String image) {
+    Navigator.pushNamed(context, detailPage, arguments: image);
+  }
 }
+
+// Card(
+// shape: RoundedRectangleBorder(
+// borderRadius: BorderRadius.all(Radius.circular(
+// 10,
+// ))),
+// color: Colors.amber,
+// child: Column(
+// crossAxisAlignment: CrossAxisAlignment.start,
+// children: [
+// Hero(
+// tag: "myImage",
+// child: Image.asset(
+// "assets/images/nike.png",
+// fit: BoxFit.cover,
+// ),
+// ),
+// Expanded(
+// child: Container(
+// margin: EdgeInsets.all(primaryMargin),
+// child: Column(
+// crossAxisAlignment:
+// CrossAxisAlignment.start,
+// children: [
+// Text(
+// "Name",
+// style: TextStyle(color: colorAppBlack),
+// ),
+// SizedBox(
+// height: primaryMargin,
+// ),
+// Row(
+// mainAxisAlignment:
+// MainAxisAlignment.spaceBetween,
+// children: [
+// Text("\$201"),
+// Icon(
+// Icons.favorite,
+// color: colorAppLightGray,
+// )
+// ],
+// )
+// ],
+// ),
+// ),
+// )
+// ],
+// ),
+// ),
 
 /*
 *

@@ -99,7 +99,7 @@ class AllItemTab extends StatelessWidget {
                     width: size.width * 0.25,
                     height: size.height * 0.2 / 2 + 10,
                     child: Image.network(
-                      'https://lh3.googleusercontent.com/proxy/c3P4IIYWzLXVoI5RRmdW26BmGwc9D9MRo1un9VT5cPWeyorgc7CO7k0kG1lAqg1MyUQ6VZmtsPEMNmvAVxltwdtbmnsbOzGaFBn25wy2eu9JR5SIk-lCL9RL2UkxebkS0kyeOTLQeWQlPoM_MtETNVDSFfQxZ3EqazO_rQ',
+                      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5pWafZ0JwWBLGBprZTcHjc8ROd2pLfqocIA&usqp=CAU',
                       fit: BoxFit.contain,
                     ),
                   ),
