@@ -81,8 +81,13 @@ class HomeContainerView extends StatelessWidget {
                     clipBehavior: Clip.none,
                     children: [
                       Positioned(
-                        child: Card(
-                          elevation: 2,
+                        child: InkWell(
+                          onTap: () {
+                            toDetail(context, "assets/images/shose.png");
+                          },
+                          child: Card(
+                            elevation: 2,
+                          ),
                         ),
                         left: 0,
                         right: 0,
@@ -103,11 +108,22 @@ class HomeContainerView extends StatelessWidget {
                         child: Container(
                           child: Column(
                             children: [
-                              Text("Name"),
+                              Text(
+                                "Name",
+                                style: TextStyle(color: colorAppGray),
+                              ),
+                              SizedBox(
+                                height: primaryMargin,
+                              ),
                               Expanded(
                                 child: Row(
                                   children: [
-                                    Text("\$210"),
+                                    Text(
+                                      "\$210",
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold,
+                                          color: colorAppBlack),
+                                    ),
                                     IconButton(
                                         icon: Icon(
                                           Icons.favorite,

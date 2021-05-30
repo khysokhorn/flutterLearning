@@ -63,10 +63,11 @@ var lightTheme = ThemeData(
     unselectedLabelColor: colorAppGray,
     indicator: UnderlineTabIndicator(
       borderSide: BorderSide(
-        style: BorderStyle.solid,
-        color: colorAppPrimaryColorBrown,
-        width: 1.5
-      ),
+          style: BorderStyle.solid,
+          color: colorAppPrimaryColorBrown,
+          width: 1.5),
     ),
   ),
 );
+
+var titleStyle = TextStyle(fontWeight: FontWeight.bold);
